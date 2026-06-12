@@ -67,8 +67,6 @@
             <th class="num">占比</th>
             <th data-sort="SUBSTITUTION_CASH_AMOUNT" class="num">替代金额(元) <span class="sort-arrow"></span></th>
             <th data-sort="_MARKET_CN">市场 <span class="sort-arrow"></span></th>
-            <th data-sort="CREATION_PREMIUM_RATE">申购溢价 <span class="sort-arrow"></span></th>
-            <th data-sort="REDEMPTION_DISCOUNT_RATE">赎回折价 <span class="sort-arrow"></span></th>
           </tr>
         </thead>
         <tbody id="tableBody"></tbody>
@@ -90,7 +88,8 @@
 </div>
 
 <!-- Latest data auto-loaded via script (static snapshot; 点"刷新"按钮实时抓取上交所最新数据) -->
-<script src="data/latest.js" onload="initFromGlobals()"></script>
+<script src="data/latest.js"></script>
 <script src="app.js"></script>
+<script>initFromGlobals();</script>
 </body>
 </html>
