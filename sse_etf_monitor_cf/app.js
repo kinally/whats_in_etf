@@ -99,8 +99,6 @@ function renderTable(data, sortKey_, sortAsc_) {
       <td class="num">${pct.toFixed(2)}%</td>
       <td class="num">${fmtMoney(item.SUBSTITUTION_CASH_AMOUNT)}</td>
       <td><span class="market-tag ${mktClass}">${escapeHtml(item._MARKET_CN)}</span></td>
-      <td>${escapeHtml(item.CREATION_PREMIUM_RATE || "-")}</td>
-      <td>${escapeHtml(item.REDEMPTION_DISCOUNT_RATE || "-")}</td>
     </tr>`;
   }).join("");
 
@@ -221,11 +219,10 @@ function exportData() {
   const fetchedAt = pkg.fetchedAt || "";
 
   // 列头
-  const headers = ["代码", "名称", "数量", "占比", "替代金额(元)", "市场", "替代标志", "申购溢价", "赎回折价"];
+  const headers = ["代码", "名称", "数量", "占比", "替代金额(元)", "市场", "替代标志"];
   // 字段映射
   const fields = ["INSTRUMENT_ID", "INSTRUMENT_NAME", "QUANTITY", "_PCT",
-                   "SUBSTITUTION_CASH_AMOUNT", "_MARKET_CN", "_FLAG_CN",
-                   "CREATION_PREMIUM_RATE", "REDEMPTION_DISCOUNT_RATE"];
+                   "SUBSTITUTION_CASH_AMOUNT", "_MARKET_CN", "_FLAG_CN"];
 
   const esc = v => {
     const s = (v || "").toString().trim();
